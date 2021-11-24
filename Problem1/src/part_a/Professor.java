@@ -15,22 +15,17 @@ public class Professor {
 	@GeneratedValue
 	private int id;
 
-	@Column(name = "office_number")
+	@Column(name = "office_number", nullable = false)
 	private String officeNumber;
 
-	@Column(name = "research_area")
+	@Column(name = "research_area", nullable = false)
 	private String researchArea;
 
 	@OneToOne(optional = false, cascade = { CascadeType.ALL })
-	@JoinColumn(name = "customer_id")
+	@JoinColumn(name = "customer_id", nullable = false)
 	private Customer customer;
 
 	public Professor() {
-	}
-
-	public Professor(String officeNumber, String researchArea) {
-		this.officeNumber = officeNumber;
-		this.researchArea = researchArea;
 	}
 
 	public Professor(String officeNumber, String researchArea, Customer customer) {

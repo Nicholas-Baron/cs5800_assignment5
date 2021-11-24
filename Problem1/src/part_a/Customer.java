@@ -12,10 +12,10 @@ public class Customer {
 	@GeneratedValue
 	private int id;
 
-	@Column
+	@Column(nullable = false)
 	private String name;
 
-	@Column
+	@Column(nullable = false)
 	private String address;
 
 	public Customer() {
